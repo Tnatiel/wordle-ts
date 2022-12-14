@@ -4,6 +4,7 @@ import { UserInputStyled } from './styled-components/userInputStyled';
 import { Header } from './wordle-components/Header';
 import { InputRow } from './wordle-components/InputRow';
 import { create } from 'domain';
+import { KeyboardButton } from './styled-components/KeyboardButton';
 function App() {
 
 
@@ -40,7 +41,6 @@ function App() {
         <Header />
         {/* <!-- USER INPUTS --> */}
         <div className="user-input-sec">
-
             {/* <!-- ROW 1 --> */}
             <InputRow inputsData={rowOneInputs} />
             {/* <!-- ROW 2 --> */}
@@ -58,7 +58,7 @@ function App() {
         <div className="keyboard">
             {/* <!-- ROW1 --> */}
             <div className="kboard-row1">
-                <button id="Q" className="kbd-btn">Q</button>
+                <KeyboardButton id="Q" className="kbd-btn">Q</KeyboardButton>
                 <button id="W" className="kbd-btn">W</button>
                 <button id="E" className="kbd-btn">E</button>
                 <button id="R" className="kbd-btn">R</button>
