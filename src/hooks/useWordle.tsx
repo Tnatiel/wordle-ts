@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 export function useWordle() {
+
     type Input = {
         inputId: string;
         focused: boolean;
@@ -13,10 +14,16 @@ export function useWordle() {
     const [id, setId] = useState(0)
 
     function createInputs(ids: string[]) {
-        return ids.map( id => id === '0' ? 
-        ({inputId: id, focused: true, letter: '', letterCorrect: false, letterCorrectPosition: false}): 
-        ({inputId: id, focused: false, letter: '', letterCorrect: false, letterCorrectPosition: false}))
+        return ids.map( id => {
+            return {inputId: id,
+                 focused: false, 
+                 letter: '', 
+                 letterCorrect: false, 
+                 letterCorrectPosition: false
+            }})  
     }
+
+    
 
     const rowOneInputs = createInputs(['0', '1', '2', '3', '4']) 
     const rowTwoInputs = createInputs(['5', '6', '7', '8', '9']) 
@@ -27,7 +34,11 @@ export function useWordle() {
 
 
     const totalInputs = [...rowOneInputs, ...rowTwoInputs, ...rowThreeInputs, ...rowFourInputs, ...rowFiveInputs, ...rowSixInputs]
+    
 
+    const appInit = () => {
+        totalInputs[0].focused = true
+    }
     const addLetter = (letter: string) => {
         const currentInput = {...totalInputs[id], letter, focused: false}
         const nextInput = {...totalInputs[id + 1] ,focused: true}
@@ -68,7 +79,8 @@ export function useWordle() {
     setId,
     addLetter,
     removeLetter,
-    handleKeyPress
+    handleKeyPress,
+    appInit
 
   }
 }
