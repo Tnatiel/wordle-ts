@@ -29,4 +29,9 @@
     .input-row {
         @include rows-def()
     }
+
+    .focused {
+        border: groove rgb(187 132 231);
+      }
+      
 }

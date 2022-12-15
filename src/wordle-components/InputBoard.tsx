@@ -3,7 +3,9 @@ import { InputRow } from "./InputRow"
 export function InputBoard() {
 
     function createInputs(ids: string[]) {
-        return ids.map( id => id === '0' ? ({inputId: id, focus: true, letter: '', letterCorrect: false, letterCorrectPosition: false}): ({inputId: id, focus: false, letter: '', letterCorrect: false, letterCorrectPosition: false}))
+        return ids.map( id => id === '0' ? 
+        ({inputId: id, focus: true, letter: '', letterCorrect: false, letterCorrectPosition: false}): 
+        ({inputId: id, focus: false, letter: '', letterCorrect: false, letterCorrectPosition: false}))
     }
 
     const rowOneInputs = createInputs(['0', '1', '2', '3', '4']) 
