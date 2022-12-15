@@ -1,10 +1,11 @@
 import { UserInputStyled } from '../../src/styled-components/userInputStyled';
+import { InputBox } from './InputBox';
 
 interface inputBox {
     inputId: string, 
     focus: boolean, 
     letter: string,
-    letterCorrect: boolean
+    letterCorrect: boolean,
     letterCorrectPosition: boolean,
 }
 
@@ -15,11 +16,13 @@ export function InputRow({inputsData}: {inputsData: inputBox[]}) {
         <div className="input-row">
             
             {inputsData.map( inputData => (
-                <UserInputStyled
+                <InputBox
                     boxId={inputData.inputId}
                     key={inputData.inputId}
                     focus={inputData.focus}
                     letter={inputData.letter}
+                    correctPosition={false}
+                    correct={false}
                 />
             ))}
                 
