@@ -40,11 +40,11 @@
         }
         
         // ENTER & DEL
-        #enter, #del {
+        #Enter, #Del {
             width: 4rem;
         }
         //  ROWS
-        .kboard-row1, .kboard-row2, .kboard-row3 {
+        .kboard-row {
             display: flex;
             justify-content: center;
             column-gap: 0.2rem;
