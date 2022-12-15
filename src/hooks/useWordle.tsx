@@ -32,13 +32,6 @@ export function useWordle() {
         const currentInput = {...totalInputs[id], letter, focused: false}
         const nextInput = {...totalInputs[id + 1] ,focused: true}
         const updatedInputs = [...totalInputs]
-        // const updatedInputs = totalInputs.map( input => {
-        //     if (input.inputId === id.toString()) {
-        //         return currentInput
-        //     } else if (input.inputId === (id + 1).toString()) {
-        //         return nextInput
-        //     } else {return input}
-        // })
         updatedInputs[id] = currentInput
         updatedInputs[id + 1] = nextInput
         return updatedInputs
@@ -51,6 +44,10 @@ export function useWordle() {
             const inputs = addLetter(event.code.slice(-1))
             console.log(inputs)
             setInputs(inputs)
+            setId(() => {
+                const prevId = id
+                return prevId + 1
+            })
         } else if (event.code === 'Enter') {
         } else if (event.code === 'del') {
         removeLetter()
