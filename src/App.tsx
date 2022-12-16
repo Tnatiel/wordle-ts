@@ -17,33 +17,36 @@ function App() {
     letterCorrect: boolean,
     letterCorrectPosition: boolean,
 }
-  const [wordleApi, setWordleApi] = useState<{
-    rowOneInputs: inputBox[];
-    rowTwoInputs: inputBox[];
-    rowThreeInputs: inputBox[];
-    rowFourInputs: inputBox[];
-    rowFiveInputs: inputBox[];
-    rowSixInputs: inputBox[];
-    addLetter: (letter: string) => void;
-    removeLetter: () => void;
-    handleKeyPress: (event: KeyboardEvent) => void;
-  }>({
-    rowOneInputs: [],
-    rowTwoInputs: [],
-    rowThreeInputs: [],
-    rowFourInputs: [],
-    rowFiveInputs: [],
-    rowSixInputs: [],
-    addLetter: () => {},
-    removeLetter: () => {},
-    handleKeyPress: () => {},
-  })
+
+interface WordleContextType {
+  rowOneInputs: inputBox[];
+  rowTwoInputs: inputBox[];
+  rowThreeInputs: inputBox[];
+  rowFourInputs: inputBox[];
+  rowFiveInputs: inputBox[];
+  rowSixInputs: inputBox[];
+  addLetter: (letter: string, currentId: number) => void;
+  removeLetter: () => void;
+  handleKeyPress: (event: KeyboardEvent) => void;
+}
+const [wordleApi, setWordleApi] = useState<WordleContextType>({
+  rowOneInputs: [],
+  rowTwoInputs: [],
+  rowThreeInputs: [],
+  rowFourInputs: [],
+  rowFiveInputs: [],
+  rowSixInputs: [],
+  addLetter: () => {},
+  removeLetter: () => {},
+  handleKeyPress: () => {},
+})
+
+
   const api = useWordle();
   useEffect(() => {
     setWordleApi(api);
     api.appInit();
   }, []);
-  // const WordleContext = useContext(wordleApi)
   
 
   return (

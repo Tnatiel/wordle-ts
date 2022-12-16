@@ -17,7 +17,7 @@ export const WordleContext = createContext<{
     rowFourInputs: inputBox[];
     rowFiveInputs: inputBox[];
     rowSixInputs: inputBox[];
-    addLetter: (letter: string) => void;
+    addLetter: (letter: string, currentId: number) => void;
     removeLetter: () => void;
     handleKeyPress: (event: KeyboardEvent) => void;
   }>({

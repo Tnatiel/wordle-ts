@@ -7,7 +7,7 @@ export function InputBoard() {
 
     const inputBoardData = useContext(WordleContext)
     
-    document.addEventListener('keypress',inputBoardData.handleKeyPress)
+    document.addEventListener('keypress', inputBoardData.handleKeyPress)
 
     return (
         <div className="user-input-sec">
