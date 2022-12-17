@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { useState } from "react"
 import { WordleContext } from "../providers/wordle-context"
 import { InputRow } from "./InputRow"
