@@ -9,7 +9,6 @@ interface inputBox {
     letterCorrectPosition: boolean,
 }
 
-
 export const WordleContext = createContext<{
     rowOneInputs: inputBox[];
     rowTwoInputs: inputBox[];

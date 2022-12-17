@@ -11,20 +11,20 @@ interface inputBox {
 
 export function InputRow({inputsData}: {inputsData: inputBox[]}) {
 
-
+    
     return (
         <div className="input-row">
             
             {inputsData.map( inputData =>
-            
             (
                 <InputBox
                     boxId={inputData.inputId}
                     key={inputData.inputId}
                     focused={inputData.focused}
                     letter={inputData.letter}
-                    correctPosition={false}
-                    correct={false}
+                    correctPosition={inputData.letterCorrectPosition}
+                    correct={inputData.letterCorrect}
+                    
                 />
             ))}
                 
