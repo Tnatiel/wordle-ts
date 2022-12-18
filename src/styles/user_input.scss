@@ -8,6 +8,15 @@
     justify-content: center;
     font-size: 3rem;
     color: $font-color;
+    background-color: #0d1b2a;
+    caret-color: transparent;
+    text-align: center;
+    text-transform:uppercase
+
+    
+    // &:focus {
+    //     border: groove rgb(238, 100, 238);
+    // }
 
 }
 

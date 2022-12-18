@@ -1,13 +1,16 @@
-
+// import classNames from 'classNames'
 
 export function InputBox({boxId, focus, letter, correctPosition, correct}: {boxId: string, focus: boolean, letter: string, correctPosition: boolean, correct: boolean}) {
+    console.log({boxId, focus, letter, correctPosition, correct})
     return (
-        <div 
+        <input
             id={boxId} 
             className={`ur-input  
-            ${focus === true ? 'focused': '' } 
             ${correctPosition === true ? 'correct-position': '' }
             ${correct === true ? 'correct': '' }`}
-        >{focus === true ? letter : '' }</div>
+            defaultValue={focus === true ? letter : '' }
+            autoFocus={focus}
+            maxLength={1}
+        />
     )
 } 

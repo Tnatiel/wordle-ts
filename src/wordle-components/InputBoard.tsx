@@ -1,33 +1,42 @@
 import { InputRow } from "./InputRow"
+import {FC} from 'react'
 
-export function InputBoard() {
 
-    function createInputs(ids: string[]) {
-        return ids.map( id => id === '0' ? ({inputId: id, focus: true, letter: '', letterCorrect: false, letterCorrectPosition: false}): ({inputId: id, focus: false, letter: '', letterCorrect: false, letterCorrectPosition: false}))
+interface inputBoxType {
+    
+    inputId: string;
+    focus: boolean;
+    letter: string;
+    letterCorrect: boolean;
+    letterCorrectPosition: boolean;
+    
+}
+interface inputProps {
+    row1: inputBoxType[],
+    row2: inputBoxType[],
+    row3: inputBoxType[],
+    row4: inputBoxType[],
+    row5: inputBoxType[],
+    row6: inputBoxType[]
     }
 
-    const rowOneInputs = createInputs(['0', '1', '2', '3', '4']) 
-    const rowTwoInputs = createInputs(['5', '6', '7', '8', '9']) 
-    const rowThreeInputs = createInputs(['10', '11', '12', '13', '14'])
-    const rowFourInputs = createInputs(['15', '16', '17', '18', '19']) 
-    const rowFiveInputs = createInputs(['20', '21', '22', '23', '24'])
-    const rowSixInputs = createInputs(['25', '26', '27', '28', '29']) 
+export const InputBoard: FC<inputProps> = ({row1, row2, row3, row4, row5, row6}) => {
 
 
     return (
         <div className="user-input-sec">
             {/* <!-- ROW 1 --> */}
-            <InputRow inputsData={rowOneInputs} />
+            <InputRow inputsData={row1} />
             {/* <!-- ROW 2 --> */}
-            <InputRow inputsData={rowTwoInputs} />
+            <InputRow inputsData={row2} />
             {/* <!-- ROW 3 --> */}
-            <InputRow inputsData={rowThreeInputs} />
+            <InputRow inputsData={row3} />
             {/* <!-- ROW 4 --> */}
-            <InputRow inputsData={rowFourInputs} />
+            <InputRow inputsData={row4} />
             {/* <!-- ROW 5 --> */}
-            <InputRow inputsData={rowFiveInputs} />
+            <InputRow inputsData={row5} />
             {/* <!-- ROW 6 --> */}
-            <InputRow inputsData={rowSixInputs} />
+            <InputRow inputsData={row6} />
         </div>
     )
 }

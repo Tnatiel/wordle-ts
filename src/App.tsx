@@ -1,57 +1,38 @@
 
 import './styles/App.scss';
 import { Header } from './wordle-components/Header';
-import { InputRow } from './wordle-components/InputRow';
+import { InputBoard } from './wordle-components/InputBoard';
 import { Keyboard } from './wordle-components/Keyboard';
 function App() {
 
 
-    // interface inputBox {
-    //     inputId: string, 
-    //     focus: boolean, 
-    //     letter: string,
-    //     correctPosition: boolean,
-    //     correct: boolean
-    // }
 
     function createInputs(ids: string[]) {
-        return ids.map( id => id === '0' ? ({inputId: id, focus: true, letter: '', letterCorrect: false, letterCorrectPosition: false}): ({inputId: id, focus: false, letter: '', letterCorrect: false, letterCorrectPosition: false}))
+        return ids.map( id => id === '0-0' ? ({inputId: id, focus: true, letter: '', letterCorrect: false, letterCorrectPosition: false}): ({inputId: id, focus: false, letter: '', letterCorrect: false, letterCorrectPosition: false}))
     }
     
-    const rowOneInputs = createInputs(['0', '1', '2', '3', '4']) 
-    const rowTwoInputs = createInputs(['5', '6', '7', '8', '9']) 
-    const rowThreeInputs = createInputs(['10', '11', '12', '13', '14'])
-    const rowFourInputs = createInputs(['15', '16', '17', '18', '19']) 
-    const rowFiveInputs = createInputs(['20', '21', '22', '23', '24'])
-    const rowSixInputs = createInputs(['25', '26', '27', '28', '29']) 
+    const rowOneInputs = createInputs(['0-0', '0-1', '0-2', '0-3', '0-4']) 
+    const rowTwoInputs = createInputs(['1-0', '1-1', '1-2', '1-3', '1-4']) 
+    const rowThreeInputs = createInputs(['2-0', '2-1', '2-2', '2-3', '2-4'])
+    const rowFourInputs = createInputs(['3-0', '3-1', '3-2', '3-3', '3-4']) 
+    const rowFiveInputs = createInputs(['4-0', '4-1', '4-2', '4-3', '4-4'])
+    const rowSixInputs = createInputs(['5-0', '5-1', '5-2', '5-3', '5-4']) 
 
 
   return (
 
-    // TODO create input row component
-    // TODO create input board
-    // TODO create keyboard button
-    // TODO create keyboard row
-    // TODO create keyboard 
-    // TODO 
     <main>
         {/* <!-- PAGE HEADER --> */}
         <Header />
         {/* <!-- USER INPUTS --> */}
-        <div className="user-input-sec">
-            {/* <!-- ROW 1 --> */}
-            <InputRow inputsData={rowOneInputs} />
-            {/* <!-- ROW 2 --> */}
-            <InputRow inputsData={rowTwoInputs} />
-            {/* <!-- ROW 3 --> */}
-            <InputRow inputsData={rowThreeInputs} />
-            {/* <!-- ROW 4 --> */}
-            <InputRow inputsData={rowFourInputs} />
-            {/* <!-- ROW 5 --> */}
-            <InputRow inputsData={rowFiveInputs} />
-            {/* <!-- ROW 6 --> */}
-            <InputRow inputsData={rowSixInputs} />
-        </div>
+        <InputBoard 
+          row1={rowOneInputs} 
+          row2={rowTwoInputs} 
+          row3={rowThreeInputs} 
+          row4={rowFourInputs} 
+          row5={rowFiveInputs} 
+          row6={rowSixInputs} 
+        />
         {/* <!-- KEYBOARD --> */}
         <Keyboard />
     </main>
