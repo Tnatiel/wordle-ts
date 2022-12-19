@@ -11,12 +11,15 @@
     background-color: #0d1b2a;
     caret-color: transparent;
     text-align: center;
-    text-transform:uppercase
+    text-transform:uppercase;
+    cursor: default;
+    font-family: 'Josefin Slab', serif;
 
-    
-    // &:focus {
-    //     border: groove rgb(238, 100, 238);
-    // }
+    &:focus { 
+        outline: none;
+        border-color: #719ECE;
+        box-shadow: 0 0 10px #719ECE;
+    }
 
 }
 
