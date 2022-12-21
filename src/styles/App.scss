@@ -17,7 +17,7 @@ $wrong-color: rgb(249 144 144 / 66%);
     border: 0;
   }
 
-#main-header {
+#wordle-header {
     @include header
 }
 
@@ -45,4 +45,15 @@ main {
     @include keyboard-def
 }
 
+
+
+.navbar {
+    padding-left:  1rem;
+    padding-right:  1rem;
+    width:  75vw;
+    
+    .info {
+        justify-self: flex-end;
+    }
+}
 
