@@ -7,6 +7,7 @@ import { RouterProvider } from 'react-router-dom';
 import {createBrowserRouter} from 'react-router-dom'
 import { WordleApp } from './main-components/WordleApp'
 import { SignIn } from './pages/SignIn';
+import { Home } from './main-components/LandingPage';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -22,6 +23,10 @@ export const route = createBrowserRouter([
       {
           path: 'sign-in',
           element: <SignIn />
+      },
+      {
+          path: 'home',
+          element: <Home />
       },
       ]
   },
