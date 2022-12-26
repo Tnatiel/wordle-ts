@@ -1,0 +1,57 @@
+
+@mixin modal-def {
+    background-color: $main-color;
+    color: $font-color;
+
+    .examples-list {
+        list-style: none;
+    
+        .word-example {
+            display: flex;
+            gap: 0.2rem;
+        }
+     
+        .example-ur-input {
+            width: 3rem;
+            height: 7vh;
+            border: solid #2e3e5b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            background-color: #0d1b2a;
+            caret-color: transparent;
+            text-align: center;
+            text-transform:uppercase;
+            cursor: default;
+            font-family: 'Josefin Slab', serif;
+            
+        
+            &:focus { 
+                outline: none;
+                border-color: #719ECE;
+                box-shadow: 0 0 10px #719ECE;
+            }
+        }
+    
+        .the-letter {
+            font-weight: bold;
+        }
+        
+        .correct-letter {
+            background-color: #538d4e;
+            border-color: #538d4e;
+        }
+        
+        .correct-position {
+            background-color: #b59f3b;
+            border-color: #b59f3b;
+        }
+        
+        .wrong-letter {
+            background-color: #3a3a3c;
+            border-color: #3a3a3c;
+        }
+        
+    }
+}
