@@ -1,9 +1,9 @@
 
 import { Outlet } from 'react-router-dom';
 import {useState} from 'react'
-import {InstrucModal} from './main-components/InstrucModal'
-import { WelcomeNavBar } from './main-components/NavBar';
+import {InstructionsModal} from './main-components/InstructionsModal'
 import './styles/App.scss';
+import NavBar from './main-components/NavBar';
 
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
   const handleShow = (): void => setShow(true);
   return (
     <>
-      <InstrucModal show={show} closeModal={handleClose}/>
-      <WelcomeNavBar openModal={handleShow}  />
+      <NavBar openModal={handleShow}/>
+      <InstructionsModal show={show} closeModal={handleClose}/>
       <Outlet />
     </>
 
