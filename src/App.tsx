@@ -1,15 +1,20 @@
 
 import { Outlet } from 'react-router-dom';
-
-import { WelcomeNavBar as NavBar } from './main-components/NavBar';
+import {useState} from 'react'
+import {InstrucModal} from './main-components/InstrucModal'
+import { WelcomeNavBar } from './main-components/NavBar';
 import './styles/App.scss';
 
 
 function App() {
 
+  const [show, setShow] = useState(false);
+  const handleClose = (): void => setShow(false);
+  const handleShow = (): void => setShow(true);
   return (
     <>
-      <NavBar />
+      <InstrucModal show={show} closeModal={handleClose}/>
+      <WelcomeNavBar openModal={handleShow}  />
       <Outlet />
     </>
 

@@ -2,6 +2,7 @@
 @import './header.scss';
 @import './keyboard';
 @import './user_input';
+@import './modal.scss';
 
 /* // ******************************VARIABLES************************** */
 $main-color: #0d1b2a;
@@ -10,6 +11,8 @@ $btn-color: #1b263b;
 $correct-color: rgb(154 255 115 / 66%);
 $half-correct-color: rgb(184 161 50 / 66%);
 $wrong-color: rgb(249 144 144 / 66%);
+
+
 
 * {
     margin: 0;
@@ -34,8 +37,8 @@ main {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 5vh;
-    margin-top: 2vh;
+    gap: 3vh;
+    margin-top: 1vh;
 }
 
 .user-input-sec {
@@ -57,3 +60,10 @@ main {
     }
 }
 
+
+.modal-content {
+    @include modal-def
+}
+
+
+    
