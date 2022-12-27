@@ -6,9 +6,7 @@ import './styles/App.scss';
 import NavBar from './main-components/NavBar';
 import SignInModal from './main-components/SignInModal';
 
-
 function App() {
-
   const [showInsructions, setShowInstructions] = useState(false);
   const handleInstructionsClose = (): void => setShowInstructions(false);
   const handleInstructionsShow = (): void => setShowInstructions(true);
@@ -29,7 +27,6 @@ function App() {
       />
       <Outlet />
     </>
-
   );
 }
 

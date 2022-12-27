@@ -13,7 +13,7 @@ function NavBar({ openInstructionsModal, openSignInModal }: { openInstructionsMo
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Button variant='dark'>
-              <Link className="nav-link" to={'home'}>Home</Link>
+              <Link className="nav-link" to={'/'}>Home</Link>
             </Button>
             <Button variant='dark' onClick={openSignInModal}>
               <Nav.Item className="nav-link" >Sign in</Nav.Item>
