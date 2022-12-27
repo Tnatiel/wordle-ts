@@ -30,6 +30,7 @@ body {
     height: 100vh;
     overflow: hidden;
     background-color: $main-color;
+    background: url('../../../2491665.jpg');
 }
     
 
@@ -68,7 +69,7 @@ main {
 
     
 .home {
-    background: url('../../../2491665.jpg');
+    // background: url('../../../2491665.jpg');
     display: flex;
     justify-content: center;
     align-items: center;

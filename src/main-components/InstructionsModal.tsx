@@ -2,7 +2,7 @@
 import Modal from 'react-bootstrap/Modal';
 
 
-export function InstructionsModal({show, closeModal}: {show: boolean, closeModal: () => void}) {
+export function InstructionsModal({showInstructions: show, closeModal}: {showInstructions: boolean, closeModal: () => void}) {
 
   return (
     <>
@@ -26,7 +26,7 @@ export function InstructionsModal({show, closeModal}: {show: boolean, closeModal
         </p>
         <ul className="instructions-list">
             <li>Each guess must be a valid 5-letter word</li>
-            <li>The color of the tiles will change to show how close yoyr guess was to the word-example</li>
+            <li>The color of the tiles will change to show how close your guess was to the word-example</li>
         </ul>
         <h6>Examples</h6>
         <ul className="examples-list">

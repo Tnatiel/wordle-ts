@@ -5,31 +5,35 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
 import {createBrowserRouter} from 'react-router-dom'
-import { WordleApp } from './main-components/WordleApp'
-import { SignIn } from './pages/SignIn';
-import { Home } from './main-components/LandingPage';
+import { WordleApp } from './pages/WordleApp'
+import { Home } from './pages/Home';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 export const route = createBrowserRouter([
-  {
+    {
       path: '/',
       element: <App />,
-      children: [
-        {
-          path: 'wordle',
-          element: <WordleApp />
-      },
-      {
-          path: 'sign-in',
-          element: <SignIn />
-      },
-      {
-          path: 'home',
-          element: <Home />
-      },
-      ]
-  },
+      
+    },
+    {
+      path: 'wordle',
+      element: <WordleApp />
+    }
+  // {
+  //     path: '/',
+  //     element: <App />,
+  //     children: [
+  //       {
+  //         path: 'wordle',
+  //         element: <WordleApp />
+  //       },
+  //       {
+  //           path: 'home',
+  //           element: <Home />
+  //       },
+  //       ]
+  //   },
   
 ])
 root.render(
