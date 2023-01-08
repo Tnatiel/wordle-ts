@@ -1,12 +1,23 @@
 
 import { Outlet } from 'react-router-dom';
-import {useState} from 'react'
+import {useState, useRef} from 'react'
 import {InstructionsModal} from './main-components/InstructionsModal'
 import './styles/App.scss';
 import NavBar from './main-components/NavBar';
 import SignInModal from './main-components/SignInModal';
 
 function App() {
+
+  const formRef = useRef<HTMLFormElement>(null)
+  const getUserData = () => {
+    if (formRef.current) {
+      const userData  = new FormData(formRef.current);
+      const valuesObj = Object.fromEntries(userData.entries())
+      localStorage.setItem('name', valuesObj.name.toString())
+      localStorage.setItem('email', valuesObj.email.toString())
+      console.log('local storage: ', localStorage)
+    }
+  }
   const [showInsructions, setShowInstructions] = useState(false);
   const handleInstructionsClose = (): void => setShowInstructions(false);
   const handleInstructionsShow = (): void => setShowInstructions(true);
@@ -24,6 +35,8 @@ function App() {
       <SignInModal 
         showSignIn={showSignIn} 
         closeSignInModal={handleSignInClose}
+        handleSubmit={getUserData}
+        formRef={formRef}
       />
       <Outlet />
     </>

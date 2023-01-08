@@ -1,8 +1,22 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import { useRef } from 'react'
 
-function SignInModal({ showSignIn, closeSignInModal }: { showSignIn: boolean, closeSignInModal: () => void }) {
+function SignInModal(
+  { showSignIn, closeSignInModal, handleSubmit, formRef }: 
+  { showSignIn: boolean, closeSignInModal: () => void, handleSubmit: () => void, formRef: React.RefObject<HTMLFormElement> }) {
+
+
+  // const getUserData = () => {
+  //   if (formRef.current) {
+  //     const userData  = new FormData(formRef.current);
+  //     const valuesObj = Object.fromEntries(userData.entries())
+  //     localStorage.setItem('name', valuesObj.name.toString())
+  //     localStorage.setItem('email', valuesObj.email.toString())
+  //   }
+  // }
+
   return (
     <>
     
@@ -19,10 +33,10 @@ function SignInModal({ showSignIn, closeSignInModal }: { showSignIn: boolean, cl
         </Modal.Header>
         <Modal.Body>
 
-            <Form>
+            <Form ref={formRef} >
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
-                    <Form.Control type="text" placeholder="Enter name" />
+                    <Form.Control name='name' type="text" placeholder="Enter name" />
                     <Form.Text className="text-muted">
                         We'll never share your name with anyone else.
                     </Form.Text>
@@ -30,7 +44,7 @@ function SignInModal({ showSignIn, closeSignInModal }: { showSignIn: boolean, cl
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control name='email' type="email" placeholder="Enter email" />
                     <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                     </Form.Text>
@@ -40,7 +54,7 @@ function SignInModal({ showSignIn, closeSignInModal }: { showSignIn: boolean, cl
         </Modal.Body>
 
         <Modal.Footer>
-            <Button variant="primary" type="submit">
+            <Button onClick={handleSubmit} variant="primary" type="submit">
                 Sign in
             </Button>
         </Modal.Footer>
