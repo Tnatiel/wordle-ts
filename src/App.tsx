@@ -1,6 +1,6 @@
 
 import { Outlet } from 'react-router-dom';
-import {useState, useRef} from 'react'
+import {useState, useRef, useEffect} from 'react'
 import {InstructionsModal} from './main-components/InstructionsModal'
 import './styles/App.scss';
 import NavBar from './main-components/NavBar';
@@ -8,7 +8,11 @@ import SignInModal from './main-components/SignInModal';
 
 function App() {
 
+  
+  
+
   const formRef = useRef<HTMLFormElement>(null)
+
   const getUserData = () => {
     if (formRef.current) {
       const userData  = new FormData(formRef.current);

@@ -1,21 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { useRef } from 'react'
 
 function SignInModal(
   { showSignIn, closeSignInModal, handleSubmit, formRef }: 
   { showSignIn: boolean, closeSignInModal: () => void, handleSubmit: () => void, formRef: React.RefObject<HTMLFormElement> }) {
 
-
-  // const getUserData = () => {
-  //   if (formRef.current) {
-  //     const userData  = new FormData(formRef.current);
-  //     const valuesObj = Object.fromEntries(userData.entries())
-  //     localStorage.setItem('name', valuesObj.name.toString())
-  //     localStorage.setItem('email', valuesObj.email.toString())
-  //   }
-  // }
 
   return (
     <>
