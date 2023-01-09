@@ -1,5 +1,5 @@
 
-import {useState, useRef, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import {InstructionsModal} from './main-components/InstructionsModal'
 import './styles/App.scss';
 import NavBar from './main-components/NavBar';
