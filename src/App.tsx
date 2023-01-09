@@ -1,27 +1,20 @@
 
-import { Outlet } from 'react-router-dom';
 import {useState, useRef, useEffect} from 'react'
 import {InstructionsModal} from './main-components/InstructionsModal'
 import './styles/App.scss';
 import NavBar from './main-components/NavBar';
 import SignInModal from './main-components/SignInModal';
-
+import { Route, Routes } from 'react-router-dom';
+import { WordleApp } from './pages/WordleApp';
+import { HomePage } from './pages/HomePage';
+import { useGreet } from './custom-hooks/useGreet';
 function App() {
 
+  useEffect(() => {
+    localStorage.clear()
+  })
   
-  
-
-  const formRef = useRef<HTMLFormElement>(null)
-
-  const getUserData = () => {
-    if (formRef.current) {
-      const userData  = new FormData(formRef.current);
-      const valuesObj = Object.fromEntries(userData.entries())
-      localStorage.setItem('name', valuesObj.name.toString())
-      localStorage.setItem('email', valuesObj.email.toString())
-      console.log('local storage: ', localStorage)
-    }
-  }
+  const { greet, formRef, getUserData } = useGreet()
   const [showInsructions, setShowInstructions] = useState(false);
   const handleInstructionsClose = (): void => setShowInstructions(false);
   const handleInstructionsShow = (): void => setShowInstructions(true);
@@ -42,7 +35,10 @@ function App() {
         handleSubmit={getUserData}
         formRef={formRef}
       />
-      <Outlet />
+      <Routes>
+        <Route path='*'  element={<HomePage user={greet} />  } />
+        <Route path='wordle'  element={<WordleApp />}  />
+      </Routes>
     </>
   );
 }

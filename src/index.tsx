@@ -2,48 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { RouterProvider } from 'react-router-dom';
-import {createBrowserRouter} from 'react-router-dom'
-import { WordleApp } from './pages/WordleApp'
-import { AppHome } from './pages/AppHome';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-export const route = createBrowserRouter([
-    {
-      path: '/',
-      element: <AppHome />,
-      children: [
-        {
-          path: 'wordle',
-          element: <WordleApp />
-        }
-      ]
-      
-    },
-    // {
-    //   path: 'wordle',
-    //   element: <WordleApp />
-    // }
-  // {
-  //     path: '/',
-  //     element: <App />,
-  //     children: [
-  //       {
-  //         path: 'wordle',
-  //         element: <WordleApp />
-  //       },
-  //       {
-  //           path: 'home',
-  //           element: <Home />
-  //       },
-  //       ]
-  //   },
-  
-])
+
+
 root.render(
   <React.StrictMode>
-    <RouterProvider router={route} />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+
   </React.StrictMode>
 );
 
