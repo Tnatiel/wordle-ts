@@ -50,7 +50,9 @@ export function InputRow({inputsData}: {inputsData: inputBox[]}) {
                     focusOn={inputData.focused}
                     inputsRefsData={inputRefs}
                 />
-            ))}
+            )
+        
+            )}
         </div>
     )
 }
